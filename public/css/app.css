@@ -1,0 +1,94 @@
+.masthead {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 35rem;
+    padding: 9rem 0;
+    background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(0, 105, 158, 0.214) 100%
+        ),
+        url("../storage/images/hero.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    position: relative;
+    text-align: center;
+    font-size: 18px;
+    background: rgb(35, 138, 255);
+    height: 26rem;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-slide .section__info {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+}
+.swiper-slide::before {
+    position: absolute;
+    content: "";
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.434);
+    opacity: 0;
+    transition: all 0.5s ease;
+    z-index: 0;
+}
+.section__info.section__whatsapp {
+    height: 42%;
+    background: rgba(0, 0, 0, 0.306);
+}
+.section__info.section__phone {
+    height: 60%;
+    background: rgba(0, 0, 0, 0.306);
+    z-index: 1;
+}
+
+.section__whatsapp,
+.section__phone {
+    transition: transform 0.5s ease;
+    transition-delay: calc(var(--delay) * 0.3s);
+    transform: translateY(230px);
+}
+
+.swiper-slide:hover::before {
+    opacity: 1;
+}
+.swiper-slide:hover .section__info.section__whatsapp,
+.swiper-slide:hover .section__info.section__phone {
+    transform: translateY(0);
+}
+
+/* Table */
